@@ -31,9 +31,11 @@ class _HomePageForCalcState extends State<HomePageForCalc> {
         } catch (e) {
           result = 'math error';
         }
-      } else if (equestion.length >= 60) {
-        result = 'only 60 digits';
-      }else {
+      } else if (equestion.length >= 47) {
+        result = 'only 47 digits';
+      } else if (result.length >= 20) {
+        print('answer');
+      } else {
         equestion = equestion + buttonText;
       }
     });
@@ -80,94 +82,94 @@ class _HomePageForCalcState extends State<HomePageForCalc> {
           title: Text('Calculator'),
         ),
         body: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
-              //DisplayFor Calculator
-              //equestion display
-              Container(
-                alignment: Alignment.centerRight,
-                padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-                child: Text(
-                  equestion,
-                  style: TextStyle(color: Colors.white, fontSize: 25.0),
-                ),
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            //DisplayFor Calculator
+            //equestion display
+            Container(
+              alignment: Alignment.centerRight,
+              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+              child: Text(
+                equestion,
+                style: TextStyle(color: Colors.white, fontSize: 25.0),
               ),
-              //result display
-              Container(
-                alignment: Alignment.centerRight,
-                padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-                child: Text(
-                  result,
-                  style: TextStyle(color: Colors.white, fontSize: 40.0),
-                ),
+            ),
+            //result display
+            Container(
+              alignment: Alignment.centerRight,
+              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+              child: Text(
+                result,
+                style: TextStyle(color: Colors.white, fontSize: 40.0),
               ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  myButtons('Cl', Colors.red[900]),
-                  myButtons('÷', Colors.deepPurple),
-                  myButtons('x', Colors.deepPurple),
-                  myButtons('c', Colors.deepPurple),
-                ],
-              ),
-              //next
-              SizedBox(
-                height: 1.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  myButtons('7', Colors.grey[500]),
-                  myButtons('8', Colors.grey[500]),
-                  myButtons('9', Colors.grey[500]),
-                  myButtons('-', Colors.deepPurple),
-                ],
-              ),
-              //next
-              SizedBox(
-                height: 1.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  myButtons('4', Colors.grey[500]),
-                  myButtons('5', Colors.grey[500]),
-                  myButtons('6', Colors.grey[500]),
-                  myButtons('+', Colors.deepPurple),
-                ],
-              ),
-              //next
-              SizedBox(
-                height: 1.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  myButtons('1', Colors.grey[500]),
-                  myButtons('2', Colors.grey[500]),
-                  myButtons('3', Colors.grey[500]),
-                  myButtons('.', Colors.deepPurple),
-                ],
-              ),
-              //next
-              SizedBox(
-                height: 1.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  myButtons('0', Colors.grey[500]),
-                  myButtons('%', Colors.grey[500]),
-                  myButtons('00', Colors.grey[500]),
-                  myButtons('=', Colors.green[900]),
-                ],
-              ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                myButtons('Cl', Colors.red[900]),
+                myButtons('÷', Colors.deepPurple),
+                myButtons('x', Colors.deepPurple),
+                myButtons('c', Colors.deepPurple),
+              ],
+            ),
+            //next
+            SizedBox(
+              height: 1.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                myButtons('7', Colors.grey[500]),
+                myButtons('8', Colors.grey[500]),
+                myButtons('9', Colors.grey[500]),
+                myButtons('-', Colors.deepPurple),
+              ],
+            ),
+            //next
+            SizedBox(
+              height: 1.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                myButtons('4', Colors.grey[500]),
+                myButtons('5', Colors.grey[500]),
+                myButtons('6', Colors.grey[500]),
+                myButtons('+', Colors.deepPurple),
+              ],
+            ),
+            //next
+            SizedBox(
+              height: 1.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                myButtons('1', Colors.grey[500]),
+                myButtons('2', Colors.grey[500]),
+                myButtons('3', Colors.grey[500]),
+                myButtons('.', Colors.deepPurple),
+              ],
+            ),
+            //next
+            SizedBox(
+              height: 1.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                myButtons('0', Colors.grey[500]),
+                myButtons('%', Colors.grey[500]),
+                myButtons('00', Colors.grey[500]),
+                myButtons('=', Colors.green[900]),
+              ],
+            ),
+          ],
         ),
+      ),
     );
   }
 }
